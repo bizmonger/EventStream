@@ -21,6 +21,9 @@ module Send =
             let data = EventData(json)
 
             if batch.TryAdd(data)
-            then return Ok ()
+            then 
+                 do! client.SendAsync batch
+                 return Ok ()
+
             else return Error $"Failed to dispatch event: {order}"
         }
