@@ -6,6 +6,8 @@ open Azure.Messaging.EventHubs.Producer
 open EventStream
 open EventStream.Language
 
+// https://learn.microsoft.com/en-us/azure/event-hubs/event-hubs-dotnet-standard-getstarted-send?tabs=passwordless%2Croles-azure-portal#send-events-to-the-event-hub
+
 module Send =
 
     let status : Operations.Receive<Connection> = 
