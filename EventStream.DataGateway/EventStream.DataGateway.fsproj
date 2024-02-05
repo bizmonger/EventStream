@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Send.fs" />
+    <Compile Include="Receive.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Azure.Identity" Version="1.10.4" />
+    <PackageReference Include="Azure.Messaging.EventHubs" Version="5.10.0" />
+    <PackageReference Include="Azure.Messaging.EventHubs.Processor" Version="5.10.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EventStream\EventStream.Specification.fsproj" />
+  </ItemGroup>
+
+</Project>
