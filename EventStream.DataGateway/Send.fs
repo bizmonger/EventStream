@@ -20,10 +20,10 @@ module Send =
             let json = JsonConvert.SerializeObject(order)
             let data = EventData(json)
 
-            if batch.TryAdd(data)
-            then 
-                 do! client.SendAsync batch
-                 return Ok ()
+            if batch.TryAdd(data) then
+
+                do! client.SendAsync batch
+                return Ok ()
 
             else return Error $"Failed to dispatch event: {order}"
         }
