@@ -104,6 +104,8 @@ module Language =
     }
 
     type Connection = {
-        ConnectionString : string
+        StorageConnectionString : string
+        StorageContainer : string
+        HubConnectionString : string
         HubName : string
     }

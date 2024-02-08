@@ -6,8 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="Send.fs" />
-    <Compile Include="Receive.fs" />
+    <Compile Include="Publish.fs" />
+    <Compile Include="Bootstrap.fs" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+    <GenerateProgramFile>false</GenerateProgramFile>
+    <IsTestProject>true</IsTestProject>
+  </PropertyGroup>
+
+    <Target Name="CopyCustomContent" AfterTargets="AfterBuild">
+	    <Copy SourceFiles="app.config" DestinationFiles="$(OutDir)\testhost.dll.config" />
+	    <Copy SourceFiles="app.config" DestinationFiles="$(OutDir)\testhost.x86.dll.config" />
+    </Target>
+
+  <ItemGroup>
+    <None Include="App.config" />
+    <Compile Include="_Hub.fs" />
+    <Compile Include="Program.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.9.0" />
+    <PackageReference Include="NUnit" Version="4.0.1" />
+    <PackageReference Include="NUnit3TestAdapter" Version="4.5.0" />
+    <PackageReference Include="NUnit.Analyzers" Version="4.0.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="coverlet.collector" Version="6.0.0" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EventStream.DataGateway\EventStream.DataGateway.fsproj" />
+    <ProjectReference Include="..\EventStream.TestAPI\EventStream.TestAPI.fsproj" />
+    <ProjectReference Include="..\EventStream\EventStream.Specification.fsproj" />
+  </ItemGroup>
+
+</Project>
