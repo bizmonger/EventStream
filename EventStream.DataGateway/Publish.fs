@@ -11,7 +11,7 @@ open EventStream.Language
 
 module Publish =
 
-    let status : Operations.Send<Connection> = 
+    let status : Operations.Publish<Connection> = 
 
         fun order settings -> task {
 
